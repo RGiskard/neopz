@@ -29,7 +29,6 @@
 #include "run_stats_table.h"
 
 using namespace std;
-
 #include "pzlog.h"
 
 #ifdef PZ_LOG
@@ -185,7 +184,11 @@ void TPZStructMatrixOR::Serial_Assemble(TPZMatrix<STATE> & stiffness, TPZFMatrix
         calcstiff.start();
         ek.Reset();
         ef.Reset();
+        TPZTimer timer;
+        timer.start();
         el->CalcStiff(ek, ef);
+        timer.stop();
+        calcStiffTime+=timer.seconds();
         if (guiInterface) if (guiInterface->AmIKilled()) {
                 return;
             }
