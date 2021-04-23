@@ -13,6 +13,7 @@
 
 #include "pzelctemp.h"
 #include "pzreducedspace.h"
+extern double contributeTime;
 
 template<class T>
 class TPZTransform;

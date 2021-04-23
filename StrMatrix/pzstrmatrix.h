@@ -12,6 +12,8 @@
 class TPZStructMatrixOR;
 #include "TPZStructMatrixBase.h"
 #include "TPZSemaphore.h"
+extern double calcStiffTime;
+
 
 //forward declarations
 class TPZElementMatrix;
